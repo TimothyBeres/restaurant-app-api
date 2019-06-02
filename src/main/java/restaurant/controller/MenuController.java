@@ -27,8 +27,13 @@ public class MenuController  {
 
     //Eelmisel andis array selle id, aga idk mis nyyd id asemel tleb ss :O
     @GetMapping("{id}")
-    public FoodItem findOne(@PathVariable Long id) {
-        return menuService.findOne(id);
+    public FoodItem findOne(@PathVariable Long foodItem) {
+        return menuService.findOne(foodItem);
+    }
+
+    @PostMapping
+    public FoodItem save(@RequestBody FoodItem foodItem) {
+        return menuService.save(foodItem);
     }
 
     @PutMapping("{id}")
@@ -37,8 +42,8 @@ public class MenuController  {
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable Long id) {
-        menuService.delete(id);
+    public void delete(@PathVariable Long foodItem) {
+        menuService.delete(foodItem);
     }
 
 }
