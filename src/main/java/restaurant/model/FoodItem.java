@@ -1,10 +1,8 @@
 package restaurant.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class FoodItem {
@@ -15,7 +13,10 @@ public class FoodItem {
     private String description;
     private Double price;
     private String category;
-
+    @ManyToMany
+    private List<OfferItem> offers;
+    @ManyToMany
+    private List<OrderItem> orders;
     public FoodItem() {
     }
 

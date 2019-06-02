@@ -1,6 +1,5 @@
 package restaurant;
 
-import org.aspectj.weaver.ast.Or;
 import restaurant.model.FoodItem;
 import restaurant.model.OfferItem;
 import restaurant.model.OrderItem;
@@ -15,11 +14,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
-import restaurant.model.FoodItem;
-import restaurant.model.OrderItem;
-import restaurant.repository.FoodItemRepository;
-import restaurant.repository.OfferItemRepository;
-import restaurant.repository.OrderRepository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -46,11 +40,29 @@ public class Application {
         return (args) -> {
             // save a couple of cars
             logger.info("adding 1 food item");
-            FoodItem food = new FoodItem("Chkn Wings", "Hot wings", 15.3, "Appertizer");
-            foodItems.save(food);
+            FoodItem food1 = new FoodItem("Chkn Wings", "Hot wings", 15.3, "Appertizer");
+            FoodItem food2 = new FoodItem("Chips", "Potato chips", 8, "Appertizer");
+            FoodItem food3 = new FoodItem("Salmon", "Atlantic salmon, oily", 11, "Main");
+            FoodItem food4 = new FoodItem("BBq ribs", "Well done ribs", 17, "Main");
+            FoodItem food5 = new FoodItem("Duck", "Nice and juici", 27, "Main");
+            FoodItem food6 = new FoodItem("Ice cream", "Vanilla and chocolate", 16, "Dessert");
+            FoodItem food7 = new FoodItem("Cake", "Cheesecake", 4, "Dessert");
             List<FoodItem> foods = new ArrayList<>();
-            foods.add(food);
+            foods.add(food1);
+            foods.add(food2);
+            foods.add(food3);
+            foods.add(food4);
+            foods.add(food5);
+            foods.add(food6);
+            foods.add(food7);
+            foodItems.saveAll(foods);
+            OfferItem offer1 = new OfferItem("Monday special", 20, new ArrayList<FoodItem>(Arrays.asList(food1, food3)));
+            OfferItem offer2 = new OfferItem("BBQ-ICECREAM COMBO", 30, new ArrayList<FoodItem>(Arrays.asList(food4, food6)));
+            offerItems.save(offer1);
+            offerItems.save(offer2);
             orderItems.save(new OrderItem("marko jagor", foods));
+            orderItems.save(new OrderItem("reiko magi", offer1));
+            orderItems.save(new OrderItem("timothy beres", offer2));
         };
     }
 }
