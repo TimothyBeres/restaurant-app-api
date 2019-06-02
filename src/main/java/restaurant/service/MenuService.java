@@ -22,9 +22,9 @@ public class MenuService {
 
     public List<FoodItem> getAll(@Nullable String foodName, @Nullable String description) {
 
-        /*if (foodName != null && description != null) {
+        if (foodName != null && description != null) {
             return foodItemRepository.findFoodItemByParams(foodName, description);
-        }*/
+        }
         return foodItemRepository.findAll();
 
         /*TypedQuery<FoodItem> query = em.createQuery("select f from FoodItems", FoodItem.class);
