@@ -1,6 +1,7 @@
 package restaurant.model;
 
 import restaurant.helpers.HelperClass;
+import restaurant.model.FoodItem;
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,8 +25,14 @@ public class OrderItem {
 
     public OrderItem(String clientName, List<FoodItem> foodItems) {
         this.clientName = clientName;
-        //this.foodItems = foodItems;
+        this.foodItems = foodItems;
         this.orderPrice = HelperClass.calculateOrderPrice(foodItems);
+    }
+    public OrderItem(String clientName, OfferItem offer) {
+        this.clientName = clientName;
+        this.offer = offer;
+        this.foodItems = offer.getFoodItems();
+        this.orderPrice = offer.getOfferPrice();
     }
 
     public Long getID() {
@@ -43,7 +50,6 @@ public class OrderItem {
     public void setClientName(String clientName) {
         this.clientName = clientName;
     }
-
     public Double getOrderPrice() {
         return orderPrice;
     }
@@ -51,7 +57,6 @@ public class OrderItem {
     public void setOrderPrice(Double offerPrice) {
         this.orderPrice = offerPrice;
     }
-
     public OfferItem getOffer() {
         return offer;
     }
@@ -59,7 +64,6 @@ public class OrderItem {
     public void setOfferId(OfferItem offer) {
         this.offer = offer;
     }
-
 
     public List<FoodItem> getFoodItems() {
         return foodItems;

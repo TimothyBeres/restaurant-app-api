@@ -13,22 +13,21 @@ import java.util.List;
 
 @RequestMapping("/menu")
 @RestController
-public class MenuController {
+public class MenuController  {
     @Autowired
     private MenuService menuService;
 
     @GetMapping
-    public List<FoodItem> getAll() {
+    public List<FoodItem> getAll(@RequestParam(value = "category", required = false) String category)
+    {
         logger.info("In menu controller");
-        return menuService.getAll(null, null);
+        return menuService.getAll(category);
     }
-
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
-
     @GetMapping("{id}")
-    public FoodItem findOne(@PathVariable Long foodItem) {
-        return menuService.findOne(foodItem);
+    public FoodItem findOne(@PathVariable Long id) {
+        return menuService.findOne(id);
     }
 
     @PostMapping
