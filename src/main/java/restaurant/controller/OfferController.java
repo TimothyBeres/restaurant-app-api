@@ -24,6 +24,7 @@ public class OfferController {
     }
 
     private static Logger logger = LoggerFactory.getLogger(Application.class);
+
     @GetMapping("{id}")
     public OfferItem findOne(@PathVariable Long id) {
         return offerService.findOne(id);
