@@ -1,11 +1,5 @@
 package restaurant;
 
-import restaurant.model.FoodItem;
-import restaurant.model.OfferItem;
-import restaurant.model.OrderItem;
-import restaurant.repository.FoodItemRepository;
-import restaurant.repository.OfferItemRepository;
-import restaurant.repository.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -14,8 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import restaurant.model.FoodItem;
+import restaurant.model.OfferItem;
+import restaurant.model.OrderItem;
+import restaurant.repository.FoodItemRepository;
+import restaurant.repository.OfferItemRepository;
+import restaurant.repository.OrderRepository;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -48,6 +47,7 @@ public class Application {
             FoodItem food5 = new FoodItem("Duck", "Nice and juici", 27, "Main");
             FoodItem food6 = new FoodItem("Ice cream", "Vanilla and chocolate", 16, "Dessert");
             FoodItem food7 = new FoodItem("Cake", "Cheesecake", 4, "Dessert");
+            FoodItem food8 = new FoodItem("Tiramisu", "Best dessert ever made", 5, "Dessert");
             List<FoodItem> foods = new ArrayList<>();
             foods.add(food1);
             foods.add(food2);
