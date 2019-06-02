@@ -25,7 +25,7 @@ public class MenuController {
 
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
-    //Eelmisel andis array selle id, aga idk mis nyyd id asemel tleb ss :O
+
     @GetMapping("{id}")
     public FoodItem findOne(@PathVariable Long foodItem) {
         return menuService.findOne(foodItem);
