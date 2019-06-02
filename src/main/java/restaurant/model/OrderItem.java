@@ -4,6 +4,7 @@ import restaurant.helpers.HelperClass;
 import restaurant.model.FoodItem;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -66,7 +67,8 @@ public class OrderItem {
     }
 
     public List<FoodItem> getFoodItems() {
-        return foodItems;
+
+        return new ArrayList<>(foodItems);
     }
 
     public void setFoodItems(List<FoodItem> foodItems) {

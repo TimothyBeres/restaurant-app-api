@@ -3,6 +3,7 @@ package restaurant.model;
 import restaurant.helpers.HelperClass;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -60,7 +61,8 @@ public class OfferItem {
     }
 
     public List<FoodItem> getFoodItems() {
-        return foodItems;
+
+        return new ArrayList<>(foodItems);
     }
 
     public void setFoodItems(List<FoodItem> foodItems) {

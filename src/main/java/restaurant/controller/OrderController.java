@@ -40,6 +40,7 @@ public class OrderController {
         {
             OfferItem offer = offerService.findOne(offerId);
             orderItem.setOffer(offer);
+            orderItem.setFoodItems(offer.getFoodItems());
         }
         return orderService.save(orderItem);
     }
