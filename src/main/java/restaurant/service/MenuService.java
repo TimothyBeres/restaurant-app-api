@@ -56,6 +56,6 @@ public class MenuService {
     }
 
     private ResponseStatusException badRequest() {
-        return new ResponseStatusException(BAD_REQUEST, "id doesnt exist");
+        return new ResponseStatusException(BAD_REQUEST, "Id doesnt exist");
     }
 }
