@@ -1,6 +1,5 @@
 package restaurant.service;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -8,7 +7,6 @@ import org.springframework.web.server.ResponseStatusException;
 import restaurant.model.OfferItem;
 import restaurant.repository.OfferItemRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
@@ -49,6 +47,7 @@ public class OfferService {
         OfferItem dbOffer = findOne(id);
         offerRepository.delete(dbOffer);
     }
+
     private ResponseStatusException badRequest() {
         return new ResponseStatusException(BAD_REQUEST, "id doesnt exist");
     }
