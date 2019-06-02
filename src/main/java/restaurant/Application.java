@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
@@ -38,7 +37,7 @@ public class Application {
                                       OrderRepository orderItems,
                                       OfferItemRepository offerItems) {
         return (args) -> {
-            // save a couple of cars
+            //save items to menu
             logger.info("adding 1 food item");
             FoodItem food1 = new FoodItem("Chkn Wings", "Hot wings", 15.3, "Appertizer");
             FoodItem food2 = new FoodItem("Chips", "Potato chips", 8, "Appertizer");

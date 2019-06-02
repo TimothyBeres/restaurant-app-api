@@ -13,16 +13,16 @@ import java.util.List;
 
 @RequestMapping("/menu")
 @RestController
-public class MenuController  {
+public class MenuController {
     @Autowired
     private MenuService menuService;
 
     @GetMapping
-    public List<FoodItem> getAll(@RequestParam(value = "category", required = false) String category)
-    {
+    public List<FoodItem> getAll(@RequestParam(value = "category", required = false) String category) {
         logger.info("In menu controller");
         return menuService.getAll(category);
     }
+
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
     @GetMapping("{id}")
