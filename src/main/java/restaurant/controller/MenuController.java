@@ -32,8 +32,8 @@ public class MenuController  {
     }
 
     @PutMapping("{id}")
-    public FoodItem update(@RequestBody FoodItem menu, @PathVariable Long id) {
-        return menuService.update(menu, id);
+    public FoodItem update(@RequestBody FoodItem food, @PathVariable Long id) {
+        return menuService.update(food, id);
     }
 
     @DeleteMapping("{id}")

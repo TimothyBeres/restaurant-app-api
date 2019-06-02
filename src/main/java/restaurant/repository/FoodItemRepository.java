@@ -7,6 +7,6 @@ import java.util.List;
 
 
 public interface FoodItemRepository extends JpaRepository<FoodItem, Long>{
-    List<FoodItem> findFoodItemByParams(String foodName, String description);
+    //List<FoodItem> findFoodItemByParams(String foodName, String description);
 
 }

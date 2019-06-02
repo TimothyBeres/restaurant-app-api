@@ -59,10 +59,11 @@ public class OfferItem {
         this.moneySaved = moneySaved;
     }
 
-    public List<FoodItem> getFoodItemIDs() {
+    public List<FoodItem> getFoodItems() {
         return foodItems;
     }
-    public void setFoodItemsIDs(List<String> FoodItem)
+
+    public void setFoodItems(List<FoodItem> foodItems)
     {
         this.foodItems = foodItems;
     }
