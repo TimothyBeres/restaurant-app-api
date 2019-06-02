@@ -13,10 +13,7 @@ public class FoodItem {
     private String description;
     private Double price;
     private String category;
-    @ManyToMany
-    private List<OfferItem> offers;
-    @ManyToMany
-    private List<OrderItem> orders;
+
     public FoodItem() {
     }
 
@@ -66,4 +63,5 @@ public class FoodItem {
     public void setPrice(double price) {
         this.price = price;
     }
+
 }
