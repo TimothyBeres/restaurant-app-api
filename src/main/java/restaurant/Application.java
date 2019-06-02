@@ -1,10 +1,5 @@
 package restaurant;
 
-import restaurant.model.FoodItem;
-import restaurant.model.OrderItem;
-import restaurant.repository.FoodItemRepository;
-import restaurant.repository.OfferItemRepository;
-import restaurant.repository.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -13,6 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
+import restaurant.model.FoodItem;
+import restaurant.model.OrderItem;
+import restaurant.repository.FoodItemRepository;
+import restaurant.repository.OfferItemRepository;
+import restaurant.repository.OrderRepository;
 
 import java.util.ArrayList;
 import java.util.List;

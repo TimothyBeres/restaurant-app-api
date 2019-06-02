@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import restaurant.model.OfferItem;
 import restaurant.model.OrderItem;
-import restaurant.repository.OfferItemRepository;
 import restaurant.repository.OrderRepository;
 
 import java.util.List;
@@ -23,6 +21,7 @@ public class OrderService {
 
         return orderRepository.findAll();
     }
+
     public OrderItem findOne(Long id) {
         OrderItem order = orderRepository.findById(id)
                 .orElseThrow(this::badRequest);
@@ -30,6 +29,7 @@ public class OrderService {
         //car.setLeases(leases);
         return order;
     }
+
     private ResponseStatusException badRequest() {
         return new ResponseStatusException(BAD_REQUEST, "id doesnt exist");
     }

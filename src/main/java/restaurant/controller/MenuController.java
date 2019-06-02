@@ -13,16 +13,16 @@ import java.util.List;
 
 @RequestMapping("/menu")
 @RestController
-public class MenuController  {
+public class MenuController {
     @Autowired
     private MenuService menuService;
 
     @GetMapping
-    public List<FoodItem> getAll()
-    {
+    public List<FoodItem> getAll() {
         logger.info("In menu controller");
-        return menuService.getAll(null,null);
+        return menuService.getAll(null, null);
     }
+
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
     //Eelmisel andis array selle id, aga idk mis nyyd id asemel tleb ss :O

@@ -1,10 +1,10 @@
 package restaurant.model;
 
 
-
-import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class FoodItem {
@@ -33,10 +33,12 @@ public class FoodItem {
     public void setID(Long id) {
         this.id = id;
     }
+
     public String getCategory() {
         return category;
     }
-    public void setCategory( String category) {
+
+    public void setCategory(String category) {
         this.category = category;
     }
 

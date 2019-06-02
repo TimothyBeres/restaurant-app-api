@@ -1,6 +1,5 @@
 package restaurant.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import restaurant.helpers.HelperClass;
 
 import javax.persistence.*;
@@ -35,6 +34,7 @@ public class OfferItem {
     public void setID(Long id) {
         this.id = id;
     }
+
     public String getOfferName() {
         return offerName;
     }
@@ -63,8 +63,7 @@ public class OfferItem {
         return foodItems;
     }
 
-    public void setFoodItems(List<FoodItem> foodItems)
-    {
+    public void setFoodItems(List<FoodItem> foodItems) {
         this.foodItems = foodItems;
     }
 }

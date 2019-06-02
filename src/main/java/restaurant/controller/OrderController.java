@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import restaurant.Application;
-import restaurant.model.OfferItem;
 import restaurant.model.OrderItem;
-import restaurant.service.OfferService;
 import restaurant.service.OrderService;
 
 import java.util.List;
@@ -23,11 +21,11 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping
-    public List<OrderItem> getAll()
-    {
+    public List<OrderItem> getAll() {
         logger.info("In offer controller");
         return orderService.getAll();
     }
+
     @GetMapping("{id}")
     public OrderItem findOne(@PathVariable Long id) {
         return orderService.findOne(id);
