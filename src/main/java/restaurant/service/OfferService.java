@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import restaurant.helpers.HelperClass;
 import restaurant.model.OfferItem;
 import restaurant.repository.OfferItemRepository;
 
@@ -31,7 +32,8 @@ public class OfferService {
     }
 
     public OfferItem save(OfferItem offer) {
-
+        Double savedMoney = HelperClass.calculateSavedMoney(offer.getOfferPrice(),offer.getFoodItems());
+        offer.setMoneySaved(savedMoney);
         return offerRepository.save(offer);
     }
 

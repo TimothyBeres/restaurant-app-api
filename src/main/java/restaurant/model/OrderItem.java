@@ -61,7 +61,7 @@ public class OrderItem {
         return offer;
     }
 
-    public void setOfferId(OfferItem offer) {
+    public void setOffer(OfferItem offer) {
         this.offer = offer;
     }
 

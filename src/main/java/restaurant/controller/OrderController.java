@@ -6,7 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import restaurant.Application;
+import restaurant.model.OfferItem;
 import restaurant.model.OrderItem;
+import restaurant.service.OfferService;
 import restaurant.service.OrderService;
 
 import java.util.List;
@@ -16,6 +18,8 @@ import java.util.List;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private OfferService offerService;
 
     @GetMapping
     public List<OrderItem> getAll(@RequestParam(value = "clientName", required = false) String clientName) {
@@ -31,7 +35,12 @@ public class OrderController {
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
     @PostMapping
-    public OrderItem save(@RequestBody OrderItem orderItem) {
+    public OrderItem save(@RequestBody OrderItem orderItem, @RequestParam(value = "offerId", required = false) Long offerId) {
+        if(offerId != null)
+        {
+            OfferItem offer = offerService.findOne(offerId);
+            orderItem.setOffer(offer);
+        }
         return orderService.save(orderItem);
     }
 
