@@ -1,12 +1,5 @@
 package restaurant;
 
-import org.aspectj.weaver.ast.Or;
-import restaurant.model.FoodItem;
-import restaurant.model.OfferItem;
-import restaurant.model.OrderItem;
-import restaurant.repository.FoodItemRepository;
-import restaurant.repository.OfferItemRepository;
-import restaurant.repository.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -22,7 +15,6 @@ import restaurant.repository.OfferItemRepository;
 import restaurant.repository.OrderRepository;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
@@ -44,7 +36,7 @@ public class Application {
                                       OrderRepository orderItems,
                                       OfferItemRepository offerItems) {
         return (args) -> {
-            // save a couple of cars
+            //save items to menu
             logger.info("adding 1 food item");
             FoodItem food = new FoodItem("Chkn Wings", "Hot wings", 15.3, "Appertizer");
             foodItems.save(food);
